@@ -58,6 +58,11 @@ function deactivate_synq_utility() {
 register_activation_hook( __FILE__, 'activate_synq_utility' );
 register_deactivation_hook( __FILE__, 'deactivate_synq_utility' );
 
+
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require __DIR__ . '/vendor/autoload.php';
+}
+
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
